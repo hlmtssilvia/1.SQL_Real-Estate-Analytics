@@ -8,6 +8,9 @@ CREATE TABLE agents (
 COPY agents
 FROM'E:\PORTOFOLIO\SQL\1.SQL_Real Estate Analytics\Real_Estate_Data.csv\agents.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING'UTF-8');
+SELECT *
+FROM agents
+LIMIT 5;
 
 CREATE TABLE customers (
   customer_id TEXT PRIMARY KEY
@@ -23,7 +26,9 @@ CREATE TABLE customers (
 COPY customers
 FROM'E:\PORTOFOLIO\SQL\1.SQL_Real Estate Analytics\Real_Estate_Data.csv\customers.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER',',ENCODING'UTF-8');
-
+SELECT *
+FROM customers
+LIMIT 5;
 
 CREATE TABLE properties (
   property_id TEXT PRIMARY KEY
@@ -44,6 +49,9 @@ CREATE TABLE properties (
 COPY properties
 FROM'E:\PORTOFOLIO\SQL\1.SQL_Real Estate Analytics\Real_Estate_Data.csv\properties.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER',',ENCODING'UTF-8');
+SELECT *
+FROM properties
+LIMIT 5;
 
 
 CREATE TABLE listings (
@@ -60,7 +68,9 @@ CREATE TABLE listings (
 COPY listings
 FROM 'E:\PORTOFOLIO\SQL\1.SQL_Real Estate Analytics\Real_Estate_Data.csv\listings.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER',',ENCODING'UTF-8');
-
+SELECT *
+FROM listings
+LIMIT 5;
 
 CREATE TABLE customers_monthly_metrics (
   customer_id TEXT 
@@ -87,11 +97,12 @@ CREATE TABLE customers_monthly_metrics (
   ,churn_month DATE
   ,FOREIGN KEY (customer_id) REFERENCES customers(customer_id)
 );
-
 COPY customers_monthly_metrics
 FROM'E:\PORTOFOLIO\SQL\1.SQL_Real Estate Analytics\Real_Estate_Data.csv\customer_monthly_metrics.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER',', ENCODING'UTF-8')
-
+SELECT *
+FROM customers_monthly_metrics
+LIMIT 5;
 
 CREATE TABLE transactions(
     transaction_id TEXT PRIMARY KEY
@@ -113,5 +124,6 @@ CREATE TABLE transactions(
 COPY transactions
 FROM'E:\PORTOFOLIO\SQL\1.SQL_Real Estate Analytics\Real_Estate_Data.csv\transactions.csv'
 WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF-8');
-
-DROP TABLE transactions
+SELECT *
+FROM transactions
+LIMIT 5;
